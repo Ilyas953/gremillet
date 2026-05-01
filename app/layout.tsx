@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
+import { Oswald, Roboto } from "next/font/google";
 import "./globals.css";
 import JsonLd from "./components/JsonLd";
 
-// Mettre à jour avec votre vrai domaine
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-oswald",
+  display: "swap",
+});
+
+const roboto = Roboto({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "700"],
+  variable: "--font-roboto",
+  display: "swap",
+});
+
 const SITE_URL = "https://www.couvreur92gremillet.fr";
 
 export const metadata: Metadata = {
@@ -28,9 +42,7 @@ export const metadata: Metadata = {
   authors: [{ name: "Ent. GREMILLET" }],
   creator: "Ent. GREMILLET",
   publisher: "Ent. GREMILLET",
-  alternates: {
-    canonical: "/",
-  },
+  alternates: { canonical: "/" },
   openGraph: {
     title: "Couvreur Boulogne-Billancourt 92 | Ent. GREMILLET",
     description:
@@ -39,31 +51,18 @@ export const metadata: Metadata = {
     url: "/",
     locale: "fr_FR",
     siteName: "Ent. GREMILLET – Couvreur 92",
-    images: [
-      {
-        url: "/heic1.png",
-        width: 1200,
-        height: 630,
-        alt: "Couvreur Boulogne-Billancourt – Ent. GREMILLET travaux de toiture",
-      },
-    ],
+    images: [{ url: "/heic1.png", width: 1200, height: 630, alt: "Couvreur Boulogne-Billancourt – Ent. GREMILLET" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Couvreur Boulogne-Billancourt 92 | Ent. GREMILLET",
-    description:
-      "Couvreur professionnel à Boulogne-Billancourt. Rénovation toiture, zinguerie, isolation thermique.",
+    description: "Couvreur professionnel à Boulogne-Billancourt. Rénovation toiture, zinguerie, isolation thermique.",
     images: ["/heic1.png"],
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
+    googleBot: { index: true, follow: true, "max-image-preview": "large", "max-snippet": -1 },
   },
   other: {
     "geo.region": "FR-92",
@@ -73,20 +72,11 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="fr">
+    <html lang="fr" className={`${oswald.variable} ${roboto.variable}`}>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
-          rel="stylesheet"
-        />
+        <link rel="preload" as="image" href="/heic1.png" />
         <link
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap"

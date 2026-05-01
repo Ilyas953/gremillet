@@ -30,7 +30,7 @@ export default function Footer() {
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Ent. GREMILLET – Couvreur Boulogne-Billancourt (92) – Tous droits réservés</p>
         <p>
-          Hébergement : <a href="https://www.cloudflare.com" target="_blank" rel="noopener">Cloudflare Pages</a> |{" "}
+          Hébergement : <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a> |{" "}
           <a href="/mentions-legales">Mentions Légales</a> |{" "}
           <a href="/politique-confidentialite">Politique de Confidentialité</a>
         </p>

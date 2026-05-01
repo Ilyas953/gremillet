@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const heroBgs = ["/heic1.png", "/efef.JPG", "/IMG_5188.PNG", "/lapla.JPG", "/heic5.png"];
 
@@ -20,11 +21,17 @@ export default function Hero() {
     <div className="hero-wrapper">
       <section className="hero">
         {heroBgs.map((src, i) => (
-          <div
-            key={i}
-            className={`hero-bg${i === 0 ? " active" : ""}`}
-            style={{ backgroundImage: `url('${src}')` }}
-          />
+          <div key={i} className={`hero-bg${i === 0 ? " active" : ""}`}>
+            <Image
+              src={src}
+              alt=""
+              fill
+              sizes="100vw"
+              priority={i === 0}
+              loading={i === 0 ? undefined : "eager"}
+              style={{ objectFit: "cover", objectPosition: "center" }}
+            />
+          </div>
         ))}
         <div className="hero-overlay" />
         <div className="hero-content">

@@ -1,5 +1,6 @@
 "use client";
 import { useEffect } from "react";
+import Image from "next/image";
 
 const servicesBgs = ["/heic3.png", "/eee.JPG", "/IMG_5191.PNG", "/heic4.png", "/lapla.JPG"];
 
@@ -17,13 +18,18 @@ export default function Services() {
   }, []);
 
   return (
-    <section className="services" id="services">
+    <section className="services animate-on-scroll" id="services">
       {servicesBgs.map((src, i) => (
-        <div
-          key={i}
-          className={`services-bg${i === 0 ? " active" : ""}`}
-          style={{ backgroundImage: `url('${src}')` }}
-        />
+        <div key={i} className={`services-bg${i === 0 ? " active" : ""}`}>
+          <Image
+            src={src}
+            alt=""
+            fill
+            sizes="100vw"
+            loading="eager"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
+        </div>
       ))}
       <div className="services-overlay" />
       <div className="services-content">

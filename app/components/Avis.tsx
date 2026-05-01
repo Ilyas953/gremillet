@@ -1,6 +1,6 @@
 export default function Avis() {
   return (
-    <section className="avis" id="avis">
+    <section className="avis animate-on-scroll" id="avis">
       <h2 className="section-title">Avis Clients – Couvreur 92 Noté 4.9/5 sur Google</h2>
       <p className="section-intro">
         Découvrez les retours de nos clients satisfaits à Boulogne-Billancourt et en Île-de-France.

@@ -9,6 +9,7 @@ import FAQ from "./components/FAQ";
 import Contact from "./components/Contact";
 import Footer from "./components/Footer";
 import FloatingCTA from "./components/FloatingCTA";
+import ScrollAnimations from "./components/ScrollAnimations";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
       <Contact />
       <Footer />
       <FloatingCTA />
+      <ScrollAnimations />
     </main>
   );
 }

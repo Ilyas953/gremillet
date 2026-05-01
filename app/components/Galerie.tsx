@@ -72,7 +72,7 @@ export default function Galerie() {
   return (
     <>
       <div className="filler-galerie-bg" />
-      <section className="galerie" id="galerie">
+      <section className="galerie animate-on-scroll" id="galerie">
         <h2 className="section-title">Nos Réalisations – Couverture &amp; Toiture en Île-de-France</h2>
         <p className="section-intro">
           Découvrez quelques-uns de nos chantiers réalisés à Boulogne-Billancourt et en Île-de-France.

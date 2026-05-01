@@ -1,15 +1,28 @@
+"use client";
+import { useState } from "react";
+import Image from "next/image";
+
 export default function Navbar() {
+  const [open, setOpen] = useState(false);
+
   return (
     <nav className="navbar">
-      <div className="logo">
-        {/* Remplacer par <img src="/logo.png" alt="Couvreur 92 Ent.GREMILLET" /> quand le logo est prêt */}
-        <span className="logo-text">
-          <span className="logo-ent">Ent.</span>
-          <span className="logo-name">GREMILLET</span>
-          <span className="logo-sub">Couvreur 92</span>
-        </span>
-      </div>
-      <div className="nav-links">
+      <a href="/" className="logo" aria-label="Accueil Ent. GREMILLET">
+        <Image src="/logo.PNG" alt="Couvreur 92 Ent.GREMILLET" width={300} height={90} priority />
+      </a>
+
+      <button
+        className={`hamburger${open ? " open" : ""}`}
+        onClick={() => setOpen(!open)}
+        aria-label="Ouvrir le menu"
+        aria-expanded={open}
+      >
+        <span />
+        <span />
+        <span />
+      </button>
+
+      <div className={`nav-links${open ? " open" : ""}`} onClick={() => setOpen(false)}>
         <a href="#services">Services</a>
         <a href="#avis">Avis</a>
         <a href="#galerie">Réalisations</a>

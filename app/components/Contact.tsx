@@ -105,11 +105,11 @@ export default function Contact() {
               <div className="form-row">
                 <div className="form-group half-width">
                   <label htmlFor="firstname">Prénom *</label>
-                  <input type="text" id="firstname" name="firstname" required placeholder="Jean" />
+                  <input type="text" id="firstname" name="firstname" required placeholder="Jean" autoComplete="given-name" />
                 </div>
                 <div className="form-group half-width">
                   <label htmlFor="lastname">Nom *</label>
-                  <input type="text" id="lastname" name="lastname" required placeholder="Dupont" />
+                  <input type="text" id="lastname" name="lastname" required placeholder="Dupont" autoComplete="family-name" />
                 </div>
               </div>
               <div className="form-group">
@@ -121,12 +121,12 @@ export default function Contact() {
                     <option value="+41">Suisse (+41)</option>
                     <option value="+377">Monaco (+377)</option>
                   </select>
-                  <input type="tel" id="phone" name="phone" required placeholder="06 12 34 56 78" />
+                  <input type="tel" id="phone" name="phone" required placeholder="06 12 34 56 78" autoComplete="tel-national" />
                 </div>
               </div>
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="jean.dupont@exemple.com" />
+                <input type="email" id="email" name="email" placeholder="jean.dupont@exemple.com" autoComplete="email" />
               </div>
               <div className="form-group">
                 <label htmlFor="travaux">Type de travaux *</label>

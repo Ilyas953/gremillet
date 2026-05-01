@@ -1,6 +1,8 @@
+import Image from "next/image";
+
 export default function PourquoiNous() {
   return (
-    <section className="pourquoi">
+    <section className="pourquoi animate-on-scroll">
       <div className="pourquoi-container">
         <div className="pourquoi-content">
           <h2>Pourquoi Choisir Ent. GREMILLET, Couvreur à Boulogne-Billancourt ?</h2>
@@ -32,27 +34,15 @@ export default function PourquoiNous() {
           </ul>
         </div>
         <div className="pourquoi-image">
-          <img
-            src="/heic2.png"
-            alt="Couvreur professionnel à Boulogne-Billancourt – Ent. GREMILLET chantier toiture"
-            loading="lazy"
-            width={800}
-            height={800}
-          />
-          <img
-            src="/heic4.png"
-            alt="Rénovation toiture 92 – travaux zinguerie Ent. GREMILLET"
-            loading="lazy"
-            width={800}
-            height={800}
-          />
-          <img
-            src="/IMG_5196.PNG"
-            alt="Pose de tuiles couverture Île-de-France – Ent. GREMILLET"
-            loading="lazy"
-            width={800}
-            height={800}
-          />
+          <div className="pourquoi-img-wrapper">
+            <Image src="/heic2.png" alt="Couvreur professionnel à Boulogne-Billancourt – Ent. GREMILLET chantier toiture" fill sizes="15vw" loading="lazy" style={{ objectFit: "cover", objectPosition: "center" }} />
+          </div>
+          <div className="pourquoi-img-wrapper">
+            <Image src="/heic4.png" alt="Rénovation toiture 92 – travaux zinguerie Ent. GREMILLET" fill sizes="15vw" loading="lazy" style={{ objectFit: "cover", objectPosition: "center" }} />
+          </div>
+          <div className="pourquoi-img-wrapper">
+            <Image src="/IMG_5196.PNG" alt="Pose de tuiles couverture Île-de-France – Ent. GREMILLET" fill sizes="15vw" loading="lazy" style={{ objectFit: "cover", objectPosition: "center" }} />
+          </div>
         </div>
       </div>
     </section>

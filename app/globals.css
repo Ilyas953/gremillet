@@ -15,8 +15,12 @@
   --navbar-height: 55px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   color: var(--noir);
   line-height: 1.6;
   overflow-x: hidden;
@@ -39,11 +43,10 @@ body {
 }
 
 .logo img {
-  height: calc(var(--navbar-height) * 1);
+  height: auto;
   width: auto;
-  max-height: 65px;
+  max-height: 90px;
   object-fit: contain;
-  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
   transition: transform 0.3s ease;
 }
 
@@ -65,12 +68,39 @@ body {
 
 .nav-links a:hover { color: var(--rouge-accent); }
 
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+  z-index: 1001;
+}
+
+.hamburger span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--blanc);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform-origin: center;
+}
+
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
 .nav-cta {
   background: var(--rouge-accent);
   color: var(--blanc) !important;
   padding: 0.8rem 1.8rem;
   border-radius: 4px;
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-weight: 600;
   font-size: 1.05rem;
   transition: all 0.3s ease;
@@ -103,11 +133,10 @@ body {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-size: cover;
-  background-position: center;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
   z-index: -2;
+  overflow: hidden;
 }
 
 .hero-bg.active { opacity: 1; }
@@ -151,7 +180,7 @@ body {
 }
 
 .hero h1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
@@ -177,7 +206,7 @@ body {
   color: var(--blanc);
   padding: 1rem 2.5rem;
   font-size: 1.1rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-weight: 600;
   border: none;
   border-radius: 4px;
@@ -204,7 +233,7 @@ body {
 }
 
 .section-title {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   text-align: center;
@@ -297,11 +326,10 @@ body {
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-size: cover;
-  background-position: center;
   opacity: 0;
   transition: opacity 1.5s ease-in-out;
   z-index: -2;
+  overflow: hidden;
 }
 
 .services-bg.active { opacity: 1; }
@@ -348,7 +376,7 @@ body {
 }
 
 .service-card h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 1.5rem;
   font-weight: 600;
   color: var(--bleu-principal);
@@ -387,7 +415,7 @@ body {
 }
 
 .google-badge .badge-text {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
   color: var(--bleu-principal);
@@ -483,7 +511,7 @@ body {
 }
 
 .pourquoi-content h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: var(--bleu-principal);
@@ -512,14 +540,13 @@ body {
   height: clamp(260px, 28vw, 380px);
 }
 
-.pourquoi-image img {
-  height: 100%;
-  width: auto;
-  aspect-ratio: 2/3;
-  object-fit: cover;
-  object-position: center;
+.pourquoi-img-wrapper {
+  position: relative;
   flex: 0 0 auto;
+  aspect-ratio: 2/3;
+  height: 100%;
   border-radius: 4px;
+  overflow: hidden;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
 }
 
@@ -539,7 +566,7 @@ body {
 
 .contact-info h3,
 .contact-form h3 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 1.8rem;
   color: var(--bleu-principal);
   margin-bottom: 1.5rem;
@@ -589,7 +616,7 @@ body {
   padding: 0.8rem;
   border: 2px solid #bdc3c7;
   border-radius: 4px;
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   font-size: 1rem;
   transition: border-color 0.3s ease;
 }
@@ -615,7 +642,7 @@ body {
   color: var(--blanc);
   padding: 1rem;
   font-size: 1.1rem;
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-weight: 600;
   border: none;
   border-radius: 4px;
@@ -650,7 +677,7 @@ body {
 }
 
 .footer-section h4 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 1.2rem;
   margin-bottom: 1rem;
   color: var(--blanc);
@@ -698,7 +725,7 @@ body {
 }
 
 .logo-ent {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   font-size: 0.65rem;
   font-weight: 400;
   opacity: 0.75;
@@ -706,7 +733,7 @@ body {
 }
 
 .logo-name {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 1.35rem;
   font-weight: 700;
   letter-spacing: 2px;
@@ -714,7 +741,7 @@ body {
 }
 
 .logo-sub {
-  font-family: 'Roboto', sans-serif;
+  font-family: var(--font-roboto), sans-serif;
   font-size: 0.6rem;
   font-weight: 400;
   opacity: 0.65;
@@ -749,7 +776,7 @@ body {
 }
 
 .zones-group-title {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--bleu-principal);
@@ -821,7 +848,7 @@ body {
 .faq-item:first-child { border-top: 1px solid #bdc3c7; }
 
 .faq-question {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 1.15rem;
   font-weight: 600;
   color: var(--bleu-principal);
@@ -913,7 +940,7 @@ body {
 }
 
 .legal-container h1 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 2.2rem;
   font-weight: 700;
   color: var(--bleu-principal);
@@ -930,7 +957,7 @@ body {
 .legal-container section { margin-top: 2rem; }
 
 .legal-container h2 {
-  font-family: 'Oswald', sans-serif;
+  font-family: var(--font-oswald), sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
   color: var(--bleu-principal);
@@ -972,22 +999,28 @@ body {
   .zone-tag { font-size: 0.82rem; padding: 0.35rem 0.7rem; }
   .legal-container { padding: 2rem 1.5rem; }
   .faq-question { font-size: 1rem; }
-  .navbar {
-    flex-direction: row;
-    gap: 1rem;
-    padding: 0.4rem 3%;
-    min-height: auto;
-  }
-  .logo img { height: 40px; max-height: 40px; }
+  .navbar { padding: 0.4rem 4%; }
+  .logo img { max-height: 50px; }
+  .hamburger { display: flex; }
   .nav-links {
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: flex-end;
-    gap: 0.4rem;
-    flex-shrink: 1;
+    position: fixed;
+    top: var(--navbar-height);
+    left: 0;
+    width: 100%;
+    background: var(--bleu-fonce);
+    flex-direction: column;
+    padding: 0.5rem 0 1rem;
+    gap: 0;
+    transform: translateY(-110%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 999;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
   }
-  .nav-links a { white-space: nowrap; font-size: 0.75rem; padding: 0.3rem 0.5rem; }
-  .nav-cta { padding: 0.4rem 0.7rem; font-size: 0.75rem; }
+  .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: all; }
+  .nav-links a { font-size: 1.05rem !important; padding: 0.85rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
+  .nav-cta { margin: 0.75rem 2rem 0 !important; border-radius: 4px !important; text-align: center; padding: 0.75rem 1rem !important; }
   .float-btn { width: 50px; height: 50px; bottom: 20px; right: 20px; }
   .form-row { flex-direction: column; }
   .phone-input-group { flex-direction: column; }
@@ -1005,8 +1038,22 @@ body {
 }
 
 @media (max-width: 480px) {
-  .navbar { padding: 0.4rem 2%; }
-  .logo img { height: 35px; max-height: 35px; }
-  .nav-links a { font-size: 0.7rem; padding: 0.25rem 0.4rem; }
-  .nav-cta { padding: 0.35rem 0.6rem; font-size: 0.7rem; }
+  .navbar { padding: 0.4rem 3%; }
+  .logo img { max-height: 44px; }
+}
+
+/* ===== ACCESSIBILITÉ – Pas d'animation si l'utilisateur le préfère ===== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .hero-bg,
+  .services-bg { transition: none; }
+  .animate-on-scroll {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .galerie-item,
+  .avis-card,
+  .service-card,
+  .float-btn { transition: none; }
 }

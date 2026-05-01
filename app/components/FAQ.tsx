@@ -43,7 +43,7 @@ const faqs = [
 
 export default function FAQ() {
   return (
-    <section className="faq" id="faq">
+    <section className="faq animate-on-scroll" id="faq">
       <h2 className="section-title">Questions Fréquentes – Couvreur Boulogne-Billancourt</h2>
       <p className="section-intro">
         Toutes les réponses à vos questions sur nos travaux de toiture à Boulogne-Billancourt et en Île-de-France.

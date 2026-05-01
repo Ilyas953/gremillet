@@ -41,7 +41,7 @@ const zones = {
 
 export default function ZonesIntervention() {
   return (
-    <section className="zones" id="zones">
+    <section className="zones animate-on-scroll" id="zones">
       <h2 className="section-title">Zones d&apos;Intervention – Couvreur 92 &amp; Île-de-France</h2>
       <p className="section-intro">
         Ent. GREMILLET intervient dans tout le département des Hauts-de-Seine (92) et les communes
