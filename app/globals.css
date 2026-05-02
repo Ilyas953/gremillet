@@ -12,7 +12,7 @@
   --gris-clair: #ecf0f1;
   --blanc: #ffffff;
   --noir: #1a1a1a;
-  --navbar-height: 55px;
+  --navbar-height: 110px;
 }
 
 html {
@@ -45,7 +45,7 @@ body {
 .logo img {
   height: auto;
   width: auto;
-  max-height: 90px;
+  max-height: 120px;
   object-fit: contain;
   transition: transform 0.3s ease;
 }
@@ -999,6 +999,7 @@ body {
   .zone-tag { font-size: 0.82rem; padding: 0.35rem 0.7rem; }
   .legal-container { padding: 2rem 1.5rem; }
   .faq-question { font-size: 1rem; }
+  :root { --navbar-height: 60px; }
   .navbar { padding: 0.4rem 4%; }
   .logo img { max-height: 50px; }
   .hamburger { display: flex; }

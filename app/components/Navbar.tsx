@@ -8,7 +8,7 @@ export default function Navbar() {
   return (
     <nav className="navbar">
       <a href="/" className="logo" aria-label="Accueil Ent. GREMILLET">
-        <Image src="/logo.PNG" alt="Couvreur 92 Ent.GREMILLET" width={300} height={90} priority />
+        <Image src="/logo.webp" alt="Couvreur 92 Ent.GREMILLET" width={400} height={100} priority quality={100} style={{ width: "auto", height: "100px" }} />
       </a>
 
       <button
