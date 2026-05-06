@@ -19,13 +19,6 @@ export default function Footer() {
           <p>Dimanche : Fermé</p>
           <p style={{ marginTop: "0.5rem", fontSize: "0.9rem", opacity: 0.8 }}>Urgences : disponible 6j/7</p>
         </div>
-        <div className="footer-section">
-          <h4>Mentions Légales</h4>
-          <p><strong>SIRET :</strong> [À compléter]</p>
-          <p><strong>N° TVA :</strong> [À compléter]</p>
-          <p><strong>Assurance RC Pro :</strong> [À compléter]</p>
-          <p><strong>Garantie Décennale :</strong> Incluse</p>
-        </div>
       </div>
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} Ent. GREMILLET – Couvreur Boulogne-Billancourt (92) – Tous droits réservés</p>
