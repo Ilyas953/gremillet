@@ -17,7 +17,7 @@ const roboto = Roboto({
   display: "swap",
 });
 
-const SITE_URL = "https://www.couvreur92gremillet.fr";
+const SITE_URL = "https://gremillet-couverture.fr";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -38,6 +38,22 @@ export const metadata: Metadata = {
     "couvreur Hauts-de-Seine",
     "devis toiture gratuit",
     "Ent GREMILLET",
+    "couvreur urgence 92",
+    "fuite toiture urgence 92",
+    "couvreur ardoise 92",
+    "couvreur tuiles 92",
+    "réparation charpente 92",
+    "traitement anti-mousse toiture",
+    "nettoyage toiture 92",
+    "couvreur pas cher 92",
+    "couvreur Neuilly-sur-Seine",
+    "couvreur Rueil-Malmaison",
+    "couvreur Issy-les-Moulineaux",
+    "couvreur Nanterre",
+    "couvreur Suresnes",
+    "couvreur Levallois-Perret",
+    "couvreur Meudon",
+    "couvreur Clamart",
   ],
   authors: [{ name: "Ent. GREMILLET" }],
   creator: "Ent. GREMILLET",
@@ -76,6 +92,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="fr" className={`${oswald.variable} ${roboto.variable}`}>
       <head>
+        <meta name="google-site-verification" content="bC9iXo1ztTAvu3wlkZLkypq9639O_O-DCOmWLMna54E" />
         <link rel="preload" as="image" href="/heic1.png" />
         <link
           rel="stylesheet"

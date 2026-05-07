@@ -60,19 +60,42 @@ export default function ZonesIntervention() {
 
         <div className="zones-group">
           <h3 className="zones-group-title">Hauts-de-Seine Sud (92)</h3>
+          <p style={{ fontSize: "0.95rem", color: "#555", marginBottom: "0.75rem", lineHeight: 1.6 }}>
+            Couvreur intervenant dans tout le sud du 92 : rénovation de toiture, isolation thermique des combles, zinguerie et traitement anti-mousse. Déplacement gratuit, devis sous 48h.
+          </p>
           <div className="zones-grid">
-            {zones.hautsDeSeineOuest.map((v) => (
-              <span key={v} className="zone-tag">{v}</span>
-            ))}
+            {zones.hautsDeSeineOuest.map((v) => {
+              const slug: Record<string, string> = {
+                "Issy-les-Moulineaux": "/couvreur-issy-les-moulineaux",
+                "Meudon": "/couvreur-meudon",
+                "Clamart": "/couvreur-clamart",
+                "Suresnes": "/couvreur-suresnes",
+              };
+              return slug[v]
+                ? <a key={v} href={slug[v]} className="zone-tag" style={{ textDecoration: "none" }}>{v}</a>
+                : <span key={v} className="zone-tag">{v}</span>;
+            })}
           </div>
         </div>
 
         <div className="zones-group">
           <h3 className="zones-group-title">Hauts-de-Seine Nord (92)</h3>
+          <p style={{ fontSize: "0.95rem", color: "#555", marginBottom: "0.75rem", lineHeight: 1.6 }}>
+            Expert couvreur dans tout le nord des Hauts-de-Seine : toitures haussmanniennes, ardoise, zinc, urgences sous 24h à Neuilly, Levallois, Nanterre, Rueil-Malmaison et alentours.
+          </p>
           <div className="zones-grid">
-            {zones.hautsDeSeineNord.map((v) => (
-              <span key={v} className="zone-tag">{v}</span>
-            ))}
+            {zones.hautsDeSeineNord.map((v) => {
+              const slug: Record<string, string> = {
+                "Neuilly-sur-Seine": "/couvreur-neuilly-sur-seine",
+                "Levallois-Perret": "/couvreur-levallois-perret",
+                "Nanterre": "/couvreur-nanterre",
+                "Rueil-Malmaison": "/couvreur-rueil-malmaison",
+                "Suresnes": "/couvreur-suresnes",
+              };
+              return slug[v]
+                ? <a key={v} href={slug[v]} className="zone-tag" style={{ textDecoration: "none" }}>{v}</a>
+                : <span key={v} className="zone-tag">{v}</span>;
+            })}
           </div>
         </div>
 

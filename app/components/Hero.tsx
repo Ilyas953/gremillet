@@ -44,7 +44,7 @@ export default function Hero() {
             Intervention d&apos;urgence pour recherche de fuite, pose de fenêtres de toit, nettoyage et traitement de toiture.
           </p>
           <a href="#contact" className="hero-btn">DEVIS GRATUIT SOUS 24H – SANS ENGAGEMENT</a>
-          <p style={{ marginTop: "10px", fontSize: "1.65rem", fontWeight: 500 }}>
+          <p className="hero-free">
             Déplacement, devis et diagnostic gratuits
           </p>
         </div>

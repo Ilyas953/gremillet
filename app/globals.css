@@ -12,11 +12,12 @@
   --gris-clair: #ecf0f1;
   --blanc: #ffffff;
   --noir: #1a1a1a;
-  --navbar-height: 110px;
+  --navbar-height: 90px;
 }
 
 html {
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 body {
@@ -24,6 +25,7 @@ body {
   color: var(--noir);
   line-height: 1.6;
   overflow-x: hidden;
+  width: 100%;
 }
 
 /* ===== NAVBAR ===== */
@@ -45,9 +47,11 @@ body {
 .logo img {
   height: auto;
   width: auto;
-  max-height: 120px;
+  max-height: 70px;
+  max-width: 280px;
   object-fit: contain;
   transition: transform 0.3s ease;
+  display: block;
 }
 
 .logo img:hover { transform: scale(1.05); }
@@ -220,6 +224,8 @@ body {
   background: var(--rouge-fonce);
   transform: scale(1.05);
 }
+
+.hero-free { font-size: 1.65rem; font-weight: 500; margin-top: 10px; }
 
 .filler-galerie-bg {
   height: 40px;
@@ -933,10 +939,9 @@ body {
 .legal-container {
   max-width: 800px;
   margin: 0 auto;
-  padding: 0 5%;
   background: var(--blanc);
   border-radius: 4px;
-  padding: 3rem 4rem;
+  padding: 3rem 3rem;
 }
 
 .legal-container h1 {
@@ -989,58 +994,81 @@ body {
 }
 
 @media (max-width: 768px) {
-  .hero h1 { font-size: 2rem; }
+  /* Navbar */
+  :root { --navbar-height: 62px; }
+  .navbar { padding: 0 3%; min-height: var(--navbar-height); }
+  .logo img { max-height: 40px; }
+  .nav-links { gap: 0.6rem; }
+  .nav-links a { font-size: 0.75rem !important; }
+  .nav-cta { padding: 0.4rem 0.8rem !important; font-size: 0.72rem !important; }
+
+  /* Hero */
+  .hero { padding: 50px 5% 70px; clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%); }
+  .hero h1 { font-size: 1.9rem; letter-spacing: 1px; }
   .hero p { font-size: 1rem; }
-  .pourquoi-container,
-  .contact-container { grid-template-columns: 1fr; }
-  .pourquoi-image { height: 260px; }
-  .section-title { font-size: 2rem; }
-  .zones-groups { gap: 1.5rem; }
-  .zone-tag { font-size: 0.82rem; padding: 0.35rem 0.7rem; }
-  .legal-container { padding: 2rem 1.5rem; }
-  .faq-question { font-size: 1rem; }
-  :root { --navbar-height: 60px; }
-  .navbar { padding: 0.4rem 4%; }
-  .logo img { max-height: 50px; }
-  .hamburger { display: flex; }
-  .nav-links {
-    position: fixed;
-    top: var(--navbar-height);
-    left: 0;
-    width: 100%;
-    background: var(--bleu-fonce);
-    flex-direction: column;
-    padding: 0.5rem 0 1rem;
-    gap: 0;
-    transform: translateY(-110%);
-    opacity: 0;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-    pointer-events: none;
-    z-index: 999;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  }
-  .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: all; }
-  .nav-links a { font-size: 1.05rem !important; padding: 0.85rem 2rem; border-bottom: 1px solid rgba(255,255,255,0.08); }
-  .nav-cta { margin: 0.75rem 2rem 0 !important; border-radius: 4px !important; text-align: center; padding: 0.75rem 1rem !important; }
-  .float-btn { width: 50px; height: 50px; bottom: 20px; right: 20px; }
+  .hero-tagline { font-size: 0.85rem; letter-spacing: 1px; gap: 0.75rem; }
+
+  /* Sections */
+  .section-title { font-size: 1.9rem; }
+  .section-intro { font-size: 0.95rem; }
+  .services, .avis, .pourquoi, .zones, .faq { padding: 50px 5%; }
+  .contact { padding: 50px 5%; }
+  .galerie { padding: 20px 5% 50px; }
+
+  /* Grids */
+  .pourquoi-container, .contact-container { grid-template-columns: 1fr; }
+  .pourquoi-image { height: 220px; }
+
+  /* Gallery */
+  .filler-galerie-bg { height: 20px; }
+  .galerie-item { min-width: 260px; flex: 0 0 260px; }
+  .galerie-grid { height: 320px; }
+
+  /* Forms */
   .form-row { flex-direction: column; }
   .phone-input-group { flex-direction: column; }
   .phone-input-group select { flex: 1; }
-  .filler-galerie-bg { height: 20px; }
-  .galerie-item { min-width: 280px; flex: 0 0 280px; }
+
+  /* FAQ */
+  .faq-question { font-size: 1rem; }
+
+  /* Zones */
+  .zones-groups { gap: 1.5rem; }
+  .zone-tag { font-size: 0.82rem; padding: 0.35rem 0.7rem; }
+
+  /* Footer */
+  .footer { padding: 2rem 5%; }
+  .footer-content { grid-template-columns: 1fr; gap: 1.25rem; }
+
+  /* Legal */
+  .legal-container { padding: 2rem 1.5rem; }
+
+  /* Float btn */
+  .float-btn { width: 50px; height: 50px; bottom: 16px; right: 16px; }
 }
 
 @media (max-width: 600px) {
   .avis-grid { grid-template-columns: 1fr; }
-  .google-badge { padding: 0.85rem 1.5rem; gap: 0.5rem; }
-  .google-badge .google-logo { width: 24px; height: 24px; }
-  .google-badge .badge-stars { font-size: 1.2rem; }
-  .google-badge .badge-text { font-size: 0.95rem; }
+  .google-badge { padding: 0.75rem 1.2rem; gap: 0.4rem; }
+  .google-badge .google-logo { width: 22px; height: 22px; }
+  .google-badge .badge-stars { font-size: 1.1rem; }
+  .google-badge .badge-text { font-size: 0.9rem; }
+  .hero h1 { font-size: 1.65rem; }
+  .hero { padding: 40px 5% 60px; }
+  .hero-btn { padding: 0.8rem 1.8rem; font-size: 1rem; }
 }
 
 @media (max-width: 480px) {
-  .navbar { padding: 0.4rem 3%; }
-  .logo img { max-height: 44px; }
+  :root { --navbar-height: 56px; }
+  .navbar { padding: 0 2%; }
+  .logo img { max-height: 34px; }
+  .nav-links { gap: 0.35rem; }
+  .nav-links a { font-size: 0.65rem !important; }
+  .nav-cta { padding: 0.35rem 0.6rem !important; font-size: 0.62rem !important; }
+  .hero h1 { font-size: 1.4rem; }
+  .section-title { font-size: 1.6rem; }
+  .pourquoi-content h2 { font-size: 1.8rem; }
+  .contact-info h3, .contact-form h3 { font-size: 1.5rem; }
 }
 
 /* ===== ACCESSIBILITÉ – Pas d'animation si l'utilisateur le préfère ===== */
