@@ -2,7 +2,13 @@
 import { useEffect } from "react";
 import Image from "next/image";
 
-const servicesBgs = ["/heic3.png", "/eee.JPG", "/IMG_5191.PNG", "/heic4.png", "/lapla.JPG"];
+const servicesBgs = [
+  { src: "/heic3.png", alt: "Services couverture toiture Boulogne-Billancourt – Ent. GREMILLET" },
+  { src: "/eee.JPG", alt: "Réparation ardoise zinguerie 92 – artisan couvreur Ent. GREMILLET" },
+  { src: "/IMG_5191.PNG", alt: "Travaux zinguerie gouttières Île-de-France – Ent. GREMILLET" },
+  { src: "/heic4.png", alt: "Nettoyage traitement toiture Hauts-de-Seine – Ent. GREMILLET" },
+  { src: "/lapla.JPG", alt: "Isolation thermique combles 92 – couvreur Ent. GREMILLET" },
+];
 
 export default function Services() {
   useEffect(() => {
@@ -19,14 +25,15 @@ export default function Services() {
 
   return (
     <section className="services animate-on-scroll" id="services">
-      {servicesBgs.map((src, i) => (
+      {servicesBgs.map((bg, i) => (
         <div key={i} className={`services-bg${i === 0 ? " active" : ""}`}>
           <Image
-            src={src}
-            alt=""
+            src={bg.src}
+            alt={bg.alt}
             fill
             sizes="100vw"
-            loading="eager"
+            priority={i === 0}
+            loading={i === 0 ? undefined : "lazy"}
             style={{ objectFit: "cover", objectPosition: "center" }}
           />
         </div>

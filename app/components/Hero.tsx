@@ -2,7 +2,13 @@
 import { useEffect } from "react";
 import Image from "next/image";
 
-const heroBgs = ["/heic1.png", "/efef.JPG", "/IMG_5188.PNG", "/lapla.JPG", "/heic5.png"];
+const heroBgs = [
+  { src: "/heic1.png", alt: "Rénovation toiture Boulogne-Billancourt – Ent. GREMILLET couvreur 92" },
+  { src: "/efef.JPG", alt: "Chantier couverture tuiles Hauts-de-Seine – Ent. GREMILLET" },
+  { src: "/IMG_5188.PNG", alt: "Pose tuiles ardoise Île-de-France – artisan couvreur Ent. GREMILLET" },
+  { src: "/lapla.JPG", alt: "Travaux toiture rénovation 92 – couvreur Boulogne-Billancourt" },
+  { src: "/heic5.png", alt: "Réparation fuite toiture Hauts-de-Seine – Ent. GREMILLET" },
+];
 
 export default function Hero() {
   useEffect(() => {
@@ -20,15 +26,15 @@ export default function Hero() {
   return (
     <div className="hero-wrapper">
       <section className="hero">
-        {heroBgs.map((src, i) => (
+        {heroBgs.map((bg, i) => (
           <div key={i} className={`hero-bg${i === 0 ? " active" : ""}`}>
             <Image
-              src={src}
-              alt=""
+              src={bg.src}
+              alt={bg.alt}
               fill
               sizes="100vw"
               priority={i === 0}
-              loading={i === 0 ? undefined : "eager"}
+              loading={i === 0 ? undefined : "lazy"}
               style={{ objectFit: "cover", objectPosition: "center" }}
             />
           </div>
