@@ -988,6 +988,297 @@ body {
 
 .legal-container a:hover { text-decoration: underline; }
 
+/* ===== CITY PAGES ===== */
+.city-hero {
+  position: relative;
+  min-height: 340px;
+  display: flex;
+  align-items: flex-end;
+  padding: calc(var(--navbar-height) + 2.5rem) 5% 3rem;
+  overflow: hidden;
+  background: var(--bleu-fonce);
+}
+
+.city-hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.city-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(160deg, rgba(41,65,133,0.45) 0%, rgba(30,30,30,0.78) 100%);
+  z-index: 1;
+}
+
+.city-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+}
+
+.city-breadcrumb {
+  font-size: 0.82rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 0.75rem;
+  letter-spacing: 0.5px;
+}
+
+.city-breadcrumb a { color: rgba(255,255,255,0.7); text-decoration: none; }
+.city-breadcrumb a:hover { color: #fff; }
+
+.city-hero h1 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 2.7rem;
+  font-weight: 700;
+  color: var(--blanc);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.8rem;
+  line-height: 1.1;
+}
+
+.city-hero-sub {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.88);
+  margin-bottom: 1.75rem;
+  max-width: 560px;
+  line-height: 1.6;
+}
+
+.city-hero-cta {
+  display: inline-block;
+  background: var(--rouge-accent);
+  color: var(--blanc);
+  padding: 0.9rem 2.2rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 600;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.city-hero-cta:hover { background: var(--rouge-fonce); transform: translateY(-2px); }
+
+.city-phone-bar {
+  background: var(--bleu-fonce);
+  color: rgba(255,255,255,0.85);
+  text-align: center;
+  padding: 0.9rem 5%;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.city-phone-bar a {
+  color: var(--blanc);
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 1.35rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.city-section {
+  padding: 70px 5%;
+}
+
+.city-section-inner {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.city-intro {
+  font-size: 1.05rem;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+  border-left: 4px solid var(--rouge-accent);
+  padding-left: 1.25rem;
+}
+
+.city-section h2 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--bleu-principal);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 1.25rem;
+}
+
+.city-section p {
+  color: #444;
+  line-height: 1.8;
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+}
+
+.city-services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.city-service-card {
+  background: var(--blanc);
+  border-radius: 4px;
+  padding: 2rem 1.5rem;
+  border-left: 4px solid var(--rouge-accent);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.city-service-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.13);
+}
+
+.city-service-card .material-symbols-outlined {
+  font-size: 2.4rem !important;
+  color: var(--bleu-principal);
+  margin-bottom: 0.75rem;
+  display: block;
+}
+
+.city-service-card h3 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--bleu-principal);
+  margin-bottom: 0.5rem;
+}
+
+.city-service-card p {
+  font-size: 0.9rem !important;
+  color: #555;
+  line-height: 1.65;
+  margin: 0 !important;
+}
+
+.city-check-list {
+  list-style: none;
+  margin-top: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.city-check-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #eee;
+  font-size: 0.98rem;
+  color: #444;
+  line-height: 1.55;
+}
+
+.city-check-list li .material-symbols-outlined {
+  color: var(--rouge-accent);
+  font-size: 1.2rem !important;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.city-cta-banner {
+  background: var(--rouge-accent);
+  padding: 4rem 5%;
+  text-align: center;
+}
+
+.city-cta-banner h2 {
+  font-family: var(--font-oswald), sans-serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--blanc);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 0.6rem;
+}
+
+.city-cta-banner p {
+  color: rgba(255,255,255,0.88);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.7;
+}
+
+.city-cta-btn {
+  display: inline-block;
+  background: var(--blanc);
+  color: var(--rouge-accent);
+  padding: 1rem 2.5rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-family: var(--font-oswald), sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+}
+
+.city-cta-btn:hover { background: var(--bleu-principal); color: var(--blanc); }
+
+.city-nearby {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.city-nearby a {
+  background: var(--gris-clair);
+  color: var(--bleu-principal);
+  padding: 0.35rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  text-decoration: none;
+  border: 1px solid #d0d7e3;
+  transition: all 0.2s ease;
+}
+
+.city-nearby a:hover { background: var(--bleu-principal); color: var(--blanc); border-color: var(--bleu-principal); }
+
+.city-nearby span {
+  background: var(--gris-clair);
+  color: #666;
+  padding: 0.35rem 0.9rem;
+  border-radius: 4px;
+  font-size: 0.88rem;
+  border: 1px solid #d0d7e3;
+}
+
+.city-back-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--rouge-accent);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.city-back-link:hover { text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .city-hero { min-height: 280px; padding: calc(var(--navbar-height) + 1rem) 5% 2rem; }
+  .city-hero h1 { font-size: 1.85rem; }
+  .city-hero-sub { font-size: 0.92rem; }
+  .city-services-grid { grid-template-columns: 1fr; gap: 1rem; }
+  .city-section { padding: 50px 5%; }
+  .city-section h2 { font-size: 1.5rem; }
+  .city-cta-banner { padding: 3rem 5%; }
+  .city-cta-banner h2 { font-size: 1.6rem; }
+  .city-phone-bar { flex-direction: column; gap: 0.2rem; }
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 992px) {
   .avis-grid { grid-template-columns: repeat(2, 1fr); }
